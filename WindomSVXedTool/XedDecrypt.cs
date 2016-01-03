@@ -41,7 +41,7 @@ namespace WindomSVXedTool
             do
             {
                 xText = ReadXedNodeTxt();
-                Console.WriteLine(xText);
+                //Console.WriteLine(xText);
                 isSectionChange(xText);
 
                 switch (section)
