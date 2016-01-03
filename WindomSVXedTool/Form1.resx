@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>-Select xed file to Decrypt.
+    <value>-Select xed file to Unpack.
   Output Name is the Name of the folder.
 
--Select Filelist.txt in folder containing decrypted data 
-  to Encrypt/Build the xed file.
+-Select Filelist.txt in folder containing Unpacked data 
+  to Pack/Build the xed file.
   Output Name is name of the generated xed file
 
 </value>
