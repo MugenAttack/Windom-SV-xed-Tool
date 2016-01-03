@@ -10,7 +10,6 @@ namespace WindomSVXedTool
 {
     class XedDecrypt
     {
-     
         XmlWriter xw;
         XmlWriterSettings xws;
         BinaryReader br;
@@ -21,9 +20,9 @@ namespace WindomSVXedTool
         int PhysicsCount = 0;
         string lastbone = "";
         bool endread = false;
-        
         string Folder;
-        public void Decrypt(string path,string folderName)
+
+        public void Decrypt(string path, string folderName)
         {
             filelist = new List<string>();
             xws = new XmlWriterSettings();
@@ -77,37 +76,22 @@ namespace WindomSVXedTool
                     break;
                 case "BoneProperty":
                     section = "BoneProperty";
-                    //MessageBox.Show("BoneProperty");
-
                     break;
                 case "AnimeName":
-                    //MessageBox.Show("AnimeName");
                     if (section == "BoneProperty")
                         xw.WriteEndElement();
-
                     xw.Close();
                     lastbone = "";
                     section = "AnimeName";
-
                     break;
                 case "Physics":
-
                     if (section == "AnimeName")
-                    {
                         xw.Close();
-
-                    }
-
-
                     section = "Physics";
                     break;
                 case "End":
-                    
                     break;
             }
-
-
-
         }
 
         void ReadBoneProperty(string ptext)
@@ -115,7 +99,7 @@ namespace WindomSVXedTool
             switch (ptext)
             {
                 case "BoneProperty":
-                    xw = XmlWriter.Create(Path.Combine(Folder,"BoneProperty.xml"), xws);
+                    xw = XmlWriter.Create(Path.Combine(Folder, "BoneProperty.xml"), xws);
                     filelist.Add("BoneProperty.xml");
                     xw.WriteStartDocument();
                     xw.WriteStartElement("BoneProperty");
@@ -142,7 +126,6 @@ namespace WindomSVXedTool
                     xw.WriteStartElement("OffsetMat");
                     for (int i = 0; i < 16; i++)
                         xw.WriteString(br.ReadSingle() + " ");
-
                     xw.WriteEndElement();
                     break;
                 case "EulerMode":
@@ -179,10 +162,8 @@ namespace WindomSVXedTool
                     break;
                 case "End":
                     xw.WriteEndElement();
-
                     if (!isNode())
                         xw.WriteStartElement(ReadText());
-
                     break;
             }
         }
@@ -214,7 +195,6 @@ namespace WindomSVXedTool
                 case "Time":
                     xw.WriteStartElement("Time");
                     xw.WriteAttributeString("Value", br.ReadInt32());
-
                     break;
                 case "ScriptText":
                     xw.WriteStartElement("ScriptText");
@@ -223,8 +203,6 @@ namespace WindomSVXedTool
                     break;
                 case "End":
                     xw.WriteEndElement();
-
-
                     break;
                 case "BoneData":
                     xw.WriteStartElement("BoneData");
@@ -232,11 +210,9 @@ namespace WindomSVXedTool
                 case "BoneName":
                     if (lastbone != "")
                         xw.WriteEndElement();
-
                     xw.WriteStartElement("BoneName");
                     lastbone = ReadText();
                     xw.WriteAttributeString("Text", lastbone);
-
                     break;
                 case "CalcType":
                     xw.WriteStartElement("CalcType");
@@ -278,10 +254,7 @@ namespace WindomSVXedTool
                     xw.WriteAttributeString("Count", br.ReadInt32());
                     xw.WriteEndElement();
                     break;
-
             }
-
-
         }
 
         void ReadPhysics(string pText)
@@ -290,7 +263,7 @@ namespace WindomSVXedTool
             {
                 case "Physics":
                     string fileName = $"Physics_{PhysicsCount}.xml";
-                    xw = XmlWriter.Create(Path.Combine(Folder,fileName), xws);
+                    xw = XmlWriter.Create(Path.Combine(Folder, fileName), xws);
                     filelist.Add(fileName);
                     PhysicsCount++;
                     xw.WriteStartDocument();
@@ -314,7 +287,6 @@ namespace WindomSVXedTool
                 case "Name":
                     xw.WriteStartElement("Name");
                     xw.WriteAttributeString("Text", ReadText());
-
                     break;
                 case "BoneIdx":
                     xw.WriteStartElement("BoneIdx");
@@ -462,9 +434,9 @@ namespace WindomSVXedTool
                     xw.WriteEndDocument();
                     xw.Close();
                     break;
-
             }
         }
+
         void WriteXof()
         {
             int binarylength = br.ReadInt32();
@@ -501,6 +473,7 @@ namespace WindomSVXedTool
             br.BaseStream.Seek(br.BaseStream.Position - (next.Length + 2), SeekOrigin.Begin);
             return next;
         }
+
         bool isNode()
         {
             br.BaseStream.Seek(1, SeekOrigin.Current);
@@ -508,23 +481,5 @@ namespace WindomSVXedTool
             br.BaseStream.Seek(br.BaseStream.Position - 2, SeekOrigin.Begin);
             return Marker == 0x8C;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
