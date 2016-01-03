@@ -10,22 +10,15 @@ namespace WindomSVXedTool
 {
     class XedEncrypt
     {
-        List<string> filelist;
         BinaryWriter bw;
         XmlDocument Doc = new XmlDocument();
+
         public void Encrypt(string path,string folderpath, string filename)
         {
             bw = new BinaryWriter(File.Create(Path.Combine(folderpath,filename+".xed")));
-            filelist = new List<string>();
-
-            StreamReader sr = new StreamReader(path);
-            do
-            {
-                filelist.Add(sr.ReadLine());
-            } while (!sr.EndOfStream);
 
             bw.Write(new byte[] { 0x58, 0x45, 0x44 });
-            foreach (string f in filelist)
+            foreach (string f in File.ReadLines(path))
             {
                 if (f.Contains("MeshData"))
                     MeshData(Path.Combine(folderpath,f));
