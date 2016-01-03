@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?><AnimeName Name="変形ショット" ID="120"><Windom_TopScript>
-
-
-TS_ActionType = AT_SUBWEAPON2;
-
-
- 
-
-</Windom_TopScript><ScriptKey Count="0" /><BoneData /></AnimeName>

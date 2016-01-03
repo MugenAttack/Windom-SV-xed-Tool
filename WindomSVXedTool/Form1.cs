@@ -17,15 +17,15 @@ namespace WindomSVXedTool
         
         public Form1()
         {
-            AllocConsole();
+            //AllocConsole();
             InitializeComponent();
            
             
             
         }
 
-        [System.Runtime.InteropServices.DllImport("kernel32.dll")]
-        private static extern bool AllocConsole();
+        //[System.Runtime.InteropServices.DllImport("kernel32.dll")]
+        //private static extern bool AllocConsole();
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -71,6 +71,11 @@ namespace WindomSVXedTool
                 return;
 
             txtFile.Text = browseFile.FileName;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

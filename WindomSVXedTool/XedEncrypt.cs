@@ -34,10 +34,10 @@ namespace WindomSVXedTool
                     BoneProperty(folderpath + "\\" + filelist[i]);
                 else if (filelist[i].Contains("Anime"))
                     Anime(folderpath + "\\" + filelist[i]);
-                //else if (filelist[i].Contains("Physics"))
-                 //   Physics(folderpath + "\\" + filelist[i]);
+                else if (filelist[i].Contains("Physics"))
+                    Physics(folderpath + "\\" + filelist[i]);
             }
-            //WriteNode("End");
+            WriteNode("End");
             bw.Close();
         }
         

@@ -21,6 +21,7 @@ namespace WindomSVXedTool
         int PhysicsCount = 0;
         string lastbone = "";
         bool endread = false;
+        
         Encoding encode;
         string Folder;
         public void Decrypt(string path,string folderName)
@@ -205,6 +206,7 @@ namespace WindomSVXedTool
             switch (ptext)
             {
                 case "AnimeName":
+                    
                     xw = XmlWriter.Create(Folder + "\\Anime_" + AnimeCount.ToString() + ".xml", xws);
                     filelist.Add("Anime_" + AnimeCount.ToString() + ".xml");
                     AnimeCount++;
