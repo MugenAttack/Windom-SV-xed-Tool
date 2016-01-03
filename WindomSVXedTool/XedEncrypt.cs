@@ -16,7 +16,7 @@ namespace WindomSVXedTool
         Encoding encode;
         public void Encrypt(string path,string folderpath, string filename)
         {
-            bw = new BinaryWriter(File.Create(folderpath + "\\"+filename+".xed"));
+            bw = new BinaryWriter(File.Create(Path.Combine(folderpath,filename+".xed")));
             filelist = new List<string>();
             encode = Encoding.GetEncoding("shift-jis");
             StreamReader sr = new StreamReader(path);
@@ -29,13 +29,13 @@ namespace WindomSVXedTool
             for (int i = 0; i < filelist.Count; i++)
             {
                 if (filelist[i].Contains("MeshData"))
-                    MeshData(folderpath + "\\" + filelist[i]);
+                    MeshData(Path.Combine(folderpath,filelist[i]));
                 else if (filelist[i].Contains("BoneProperty"))
-                    BoneProperty(folderpath + "\\" + filelist[i]);
+                    BoneProperty(Path.Combine(folderpath,filelist[i]));
                 else if (filelist[i].Contains("Anime"))
-                    Anime(folderpath + "\\" + filelist[i]);
+                    Anime(Path.Combine(folderpath,filelist[i]));
                 else if (filelist[i].Contains("Physics"))
-                    Physics(folderpath + "\\" + filelist[i]);
+                    Physics(Path.Combine(folderpath,filelist[i]));
             }
             WriteNode("End");
             bw.Close();

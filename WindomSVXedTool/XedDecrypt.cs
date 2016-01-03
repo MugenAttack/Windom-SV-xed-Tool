@@ -69,7 +69,7 @@ namespace WindomSVXedTool
 
             br.Close();
 
-            StreamWriter sw = new StreamWriter(Folder + "\\filelist.txt");
+            StreamWriter sw = new StreamWriter(Path.Combine(Folder,"filelist.txt"));
             for (int i = 0; i < filelist.Count; i++)
                 sw.WriteLine(filelist[i]);
 
@@ -129,7 +129,7 @@ namespace WindomSVXedTool
             switch (ptext)
             {
                 case "BoneProperty":
-                    xw = XmlWriter.Create(Folder + "\\BoneProperty.xml", xws);
+                    xw = XmlWriter.Create(Path.Combine(Folder,"BoneProperty.xml"), xws);
                     filelist.Add("BoneProperty.xml");
                     xw.WriteStartDocument();
                     xw.WriteStartElement("BoneProperty");
@@ -206,9 +206,9 @@ namespace WindomSVXedTool
             switch (ptext)
             {
                 case "AnimeName":
-                    
-                    xw = XmlWriter.Create(Folder + "\\Anime_" + AnimeCount.ToString() + ".xml", xws);
-                    filelist.Add("Anime_" + AnimeCount.ToString() + ".xml");
+                    string fileName = $"Anime_{AnimeCount}.xml";
+                    xw = XmlWriter.Create(Path.Combine(Folder, fileName), xws);
+                    filelist.Add(fileName);
                     AnimeCount++;
                     xw.WriteStartDocument();
                     xw.WriteStartElement("AnimeName");
@@ -310,8 +310,9 @@ namespace WindomSVXedTool
             switch (pText)
             {
                 case "Physics":
-                    xw = XmlWriter.Create(Folder + "\\Physics_" + PhysicsCount + ".xml", xws);
-                    filelist.Add("Physics_" + PhysicsCount + ".xml");
+                    string fileName = $"Physics_{PhysicsCount}.xml";
+                    xw = XmlWriter.Create(Path.Combine(Folder,fileName), xws);
+                    filelist.Add(fileName);
                     PhysicsCount++;
                     xw.WriteStartDocument();
                     xw.WriteStartElement("Physics");
@@ -510,7 +511,7 @@ namespace WindomSVXedTool
         void WriteXof()
         {
             int binarylength = br.ReadInt32();
-            BinaryWriter bw = new BinaryWriter(File.Create(Folder + "\\MeshData.xof"));
+            BinaryWriter bw = new BinaryWriter(File.Create(Path.Combine(Folder,"MeshData.xof")));
             bw.Write(br.ReadBytes(binarylength));
             bw.Close();
             filelist.Add("MeshData.xof");
