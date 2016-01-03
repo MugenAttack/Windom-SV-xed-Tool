@@ -1,44 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.IO;
+using static WindomSVXedTool.Helper;
 
 namespace WindomSVXedTool
 {
     class XedEncrypt
     {
-        List<string> filelist;
         BinaryWriter bw;
         XmlDocument Doc = new XmlDocument();
-        Encoding encode;
+
         public void Encrypt(string path,string folderpath, string filename)
         {
-            bw = new BinaryWriter(File.Create(folderpath + "\\"+filename+".xed"));
-            filelist = new List<string>();
-            encode = Encoding.GetEncoding("shift-jis");
-            StreamReader sr = new StreamReader(path);
-            do
+            using (var stream = File.Create(Path.Combine(folderpath, filename + ".xed")))
+            using (bw = new BinaryWriter(stream))
             {
-                filelist.Add(sr.ReadLine());
-            } while (!sr.EndOfStream);
-
-            bw.Write(new byte[] { 0x58, 0x45, 0x44 });
-            for (int i = 0; i < filelist.Count; i++)
-            {
-                if (filelist[i].Contains("MeshData"))
-                    MeshData(folderpath + "\\" + filelist[i]);
-                else if (filelist[i].Contains("BoneProperty"))
-                    BoneProperty(folderpath + "\\" + filelist[i]);
-                else if (filelist[i].Contains("Anime"))
-                    Anime(folderpath + "\\" + filelist[i]);
-                else if (filelist[i].Contains("Physics"))
-                    Physics(folderpath + "\\" + filelist[i]);
+                bw.Write(new byte[] {0x58, 0x45, 0x44});
+                foreach (string f in File.ReadLines(path))
+                {
+                    if (f.Contains("MeshData"))
+                        MeshData(Path.Combine(folderpath, f));
+                    else if (f.Contains("BoneProperty"))
+                        BoneProperty(Path.Combine(folderpath, f));
+                    else if (f.Contains("Anime"))
+                        Anime(Path.Combine(folderpath, f));
+                    else if (f.Contains("Physics"))
+                        Physics(Path.Combine(folderpath, f));
+                }
+                WriteNode("End");
             }
-            WriteNode("End");
-            bw.Close();
         }
         
         void MeshData(string path)
@@ -411,7 +404,7 @@ namespace WindomSVXedTool
 
         void WriteText(string pText)
         {
-            byte[] bt = encode.GetBytes(pText);
+            byte[] bt = ShiftJis.GetBytes(pText);
             bw.Write(bt.Length);
             bw.Write(bt);
         }
