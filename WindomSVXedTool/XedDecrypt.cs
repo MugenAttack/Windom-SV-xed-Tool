@@ -65,21 +65,10 @@ namespace WindomSVXedTool
 
             } while (br.BaseStream.Length > br.BaseStream.Position);
 
-
-
             br.Close();
 
-            StreamWriter sw = new StreamWriter(Path.Combine(Folder,"filelist.txt"));
-            for (int i = 0; i < filelist.Count; i++)
-                sw.WriteLine(filelist[i]);
-
-            sw.Close();
-
-
+            File.WriteAllLines(Path.Combine(Folder, "filelist.txt"), filelist);
         }
-
-
-
 
         void isSectionChange(string ptext)
         {
