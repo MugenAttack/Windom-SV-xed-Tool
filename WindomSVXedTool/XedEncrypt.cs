@@ -26,16 +26,16 @@ namespace WindomSVXedTool
             } while (!sr.EndOfStream);
 
             bw.Write(new byte[] { 0x58, 0x45, 0x44 });
-            for (int i = 0; i < filelist.Count; i++)
+            foreach (string f in filelist)
             {
-                if (filelist[i].Contains("MeshData"))
-                    MeshData(Path.Combine(folderpath,filelist[i]));
-                else if (filelist[i].Contains("BoneProperty"))
-                    BoneProperty(Path.Combine(folderpath,filelist[i]));
-                else if (filelist[i].Contains("Anime"))
-                    Anime(Path.Combine(folderpath,filelist[i]));
-                else if (filelist[i].Contains("Physics"))
-                    Physics(Path.Combine(folderpath,filelist[i]));
+                if (f.Contains("MeshData"))
+                    MeshData(Path.Combine(folderpath,f));
+                else if (f.Contains("BoneProperty"))
+                    BoneProperty(Path.Combine(folderpath,f));
+                else if (f.Contains("Anime"))
+                    Anime(Path.Combine(folderpath,f));
+                else if (f.Contains("Physics"))
+                    Physics(Path.Combine(folderpath,f));
             }
             WriteNode("End");
             bw.Close();
