@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml;
 using System.IO;
+using System.Text;
 using static WindomSVXedTool.Helper;
 
 namespace WindomSVXedTool
@@ -11,7 +12,7 @@ namespace WindomSVXedTool
     class XedDecrypt
     {
         XmlWriter xw;
-        XmlWriterSettings xws;
+        XmlWriterSettings xws = new XmlWriterSettings();
         BinaryReader br;
         List<string> filelist;
         string xText = "";
@@ -25,18 +26,17 @@ namespace WindomSVXedTool
         public void Decrypt(string path, string folderName)
         {
             filelist = new List<string>();
-            xws = new XmlWriterSettings();
-
             if (!Directory.Exists(folderName))
                 Directory.CreateDirectory(folderName);
 
             Folder = folderName;
 
             using (var stream = File.OpenRead(path))
-            using (br = new BinaryReader(stream))
+            using (var buffStream = new BufferedStream(stream, 0x100000))
+            using (br = new BinaryReader(buffStream))
             {
+                long length = br.BaseStream.Length;
                 br.BaseStream.Seek(3, SeekOrigin.Begin);
-
                 do
                 {
                     xText = ReadXedNodeTxt();
@@ -47,7 +47,6 @@ namespace WindomSVXedTool
                     {
                         case "MeshData":
                             WriteXof();
-
                             break;
                         case "BoneProperty":
                             ReadBoneProperty(xText);
@@ -60,7 +59,7 @@ namespace WindomSVXedTool
                             break;
                     }
 
-                } while (br.BaseStream.Length > br.BaseStream.Position);
+                } while (buffStream.Position < length);
             }
 
             File.WriteAllLines(Path.Combine(Folder, "filelist.txt"), filelist);
@@ -72,7 +71,6 @@ namespace WindomSVXedTool
             {
                 case "MeshData":
                     section = "MeshData";
-
                     break;
                 case "BoneProperty":
                     section = "BoneProperty";
@@ -460,10 +458,11 @@ namespace WindomSVXedTool
 
         string ReadXedNodeTxt()
         {
+            // Reading is faster than seeking with Buffered streams, it ends up saving about a second on load time
             int txtCount = br.ReadByte();
-            br.BaseStream.Seek(1, SeekOrigin.Current);
+            br.ReadByte();
             byte[] bTxt = br.ReadBytes(txtCount);
-            br.BaseStream.Seek(2, SeekOrigin.Current);
+            br.ReadInt16();
             return ShiftJis.GetString(bTxt);
         }
 
