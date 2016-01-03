@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.IO;
+using static WindomSVXedTool.Helper;
 
 namespace WindomSVXedTool
 {
@@ -13,12 +13,11 @@ namespace WindomSVXedTool
         List<string> filelist;
         BinaryWriter bw;
         XmlDocument Doc = new XmlDocument();
-        Encoding encode;
         public void Encrypt(string path,string folderpath, string filename)
         {
             bw = new BinaryWriter(File.Create(Path.Combine(folderpath,filename+".xed")));
             filelist = new List<string>();
-            encode = Encoding.GetEncoding("shift-jis");
+
             StreamReader sr = new StreamReader(path);
             do
             {
@@ -411,7 +410,7 @@ namespace WindomSVXedTool
 
         void WriteText(string pText)
         {
-            byte[] bt = encode.GetBytes(pText);
+            byte[] bt = ShiftJis.GetBytes(pText);
             bw.Write(bt.Length);
             bw.Write(bt);
         }

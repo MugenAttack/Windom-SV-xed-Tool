@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.IO;
+using static WindomSVXedTool.Helper;
 
 namespace WindomSVXedTool
 {
@@ -22,7 +22,6 @@ namespace WindomSVXedTool
         string lastbone = "";
         bool endread = false;
         
-        Encoding encode;
         string Folder;
         public void Decrypt(string path,string folderName)
         {
@@ -34,7 +33,6 @@ namespace WindomSVXedTool
 
             Folder = folderName;
 
-            encode = Encoding.GetEncoding("shift-jis");
             br = new BinaryReader(File.Open(path, FileMode.Open));
 
             br.BaseStream.Seek(3, SeekOrigin.Begin);
@@ -486,7 +484,7 @@ namespace WindomSVXedTool
         {
             int length = br.ReadInt32();
             byte[] bt = br.ReadBytes(length);
-            return encode.GetString(bt);
+            return ShiftJis.GetString(bt);
         }
 
         string ReadXedNodeTxt()
@@ -495,7 +493,7 @@ namespace WindomSVXedTool
             br.BaseStream.Seek(1, SeekOrigin.Current);
             byte[] bTxt = br.ReadBytes(txtCount);
             br.BaseStream.Seek(2, SeekOrigin.Current);
-            return System.Text.Encoding.ASCII.GetString(bTxt);
+            return ShiftJis.GetString(bTxt);
         }
 
         string getNextNode()
