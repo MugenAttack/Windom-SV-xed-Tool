@@ -64,13 +64,9 @@ namespace WindomSVXedTool
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenFileDialog browseFile = new OpenFileDialog();
-            browseFile.Filter = "supported Files (*.xed;*.txt)|*.xed;*.txt";
-            browseFile.Title = "Browse for xed or txt File";
-            if (browseFile.ShowDialog() == DialogResult.Cancel)
-                return;
-
-            txtFile.Text = browseFile.FileName;
+            OpenFileDialog browseFile = new OpenFileDialog {Filter = "supported Files (*.xed;*.txt)|*.xed;*.txt", Title = "Browse for xed or txt File"};
+            if (browseFile.ShowDialog() == DialogResult.OK)
+                txtFile.Text = browseFile.FileName;
         }
 
         private void label1_Click(object sender, EventArgs e)
