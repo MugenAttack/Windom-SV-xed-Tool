@@ -27,7 +27,7 @@ namespace WindomSVXedTool
         {
             filelist = new List<string>();
             xws = new XmlWriterSettings();
-
+            xws.Indent = true;
             if (!Directory.Exists(folderName))
                 Directory.CreateDirectory(folderName);
 
