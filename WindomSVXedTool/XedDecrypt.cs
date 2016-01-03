@@ -33,37 +33,36 @@ namespace WindomSVXedTool
 
             Folder = folderName;
 
-            br = new BinaryReader(File.Open(path, FileMode.Open));
-
-            br.BaseStream.Seek(3, SeekOrigin.Begin);
-
-
-            do
+            using (var stream = File.OpenRead(path))
+            using (br = new BinaryReader(stream))
             {
-                xText = ReadXedNodeTxt();
-                //Console.WriteLine(xText);
-                isSectionChange(xText);
+                br.BaseStream.Seek(3, SeekOrigin.Begin);
 
-                switch (section)
+                do
                 {
-                    case "MeshData":
-                        WriteXof();
+                    xText = ReadXedNodeTxt();
+                    //Console.WriteLine(xText);
+                    isSectionChange(xText);
 
-                        break;
-                    case "BoneProperty":
-                        ReadBoneProperty(xText);
-                        break;
-                    case "AnimeName":
-                        ReadAnimation(xText);
-                        break;
-                    case "Physics":
-                        ReadPhysics(xText);
-                        break;
-                }
+                    switch (section)
+                    {
+                        case "MeshData":
+                            WriteXof();
 
-            } while (br.BaseStream.Length > br.BaseStream.Position);
+                            break;
+                        case "BoneProperty":
+                            ReadBoneProperty(xText);
+                            break;
+                        case "AnimeName":
+                            ReadAnimation(xText);
+                            break;
+                        case "Physics":
+                            ReadPhysics(xText);
+                            break;
+                    }
 
-            br.Close();
+                } while (br.BaseStream.Length > br.BaseStream.Position);
+            }
 
             File.WriteAllLines(Path.Combine(Folder, "filelist.txt"), filelist);
         }
@@ -469,9 +468,9 @@ namespace WindomSVXedTool
         void WriteXof()
         {
             int binarylength = br.ReadInt32();
-            BinaryWriter bw = new BinaryWriter(File.Create(Path.Combine(Folder,"MeshData.xof")));
-            bw.Write(br.ReadBytes(binarylength));
-            bw.Close();
+            using (var stream = File.Create(Path.Combine(Folder, "MeshData.xof")))
+            using (BinaryWriter bw = new BinaryWriter(stream))
+                bw.Write(br.ReadBytes(binarylength));
             filelist.Add("MeshData.xof");
         }
 

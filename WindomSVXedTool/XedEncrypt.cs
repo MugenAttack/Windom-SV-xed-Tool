@@ -15,22 +15,23 @@ namespace WindomSVXedTool
 
         public void Encrypt(string path,string folderpath, string filename)
         {
-            bw = new BinaryWriter(File.Create(Path.Combine(folderpath,filename+".xed")));
-
-            bw.Write(new byte[] { 0x58, 0x45, 0x44 });
-            foreach (string f in File.ReadLines(path))
+            using (var stream = File.Create(Path.Combine(folderpath, filename + ".xed")))
+            using (bw = new BinaryWriter(stream))
             {
-                if (f.Contains("MeshData"))
-                    MeshData(Path.Combine(folderpath,f));
-                else if (f.Contains("BoneProperty"))
-                    BoneProperty(Path.Combine(folderpath,f));
-                else if (f.Contains("Anime"))
-                    Anime(Path.Combine(folderpath,f));
-                else if (f.Contains("Physics"))
-                    Physics(Path.Combine(folderpath,f));
+                bw.Write(new byte[] {0x58, 0x45, 0x44});
+                foreach (string f in File.ReadLines(path))
+                {
+                    if (f.Contains("MeshData"))
+                        MeshData(Path.Combine(folderpath, f));
+                    else if (f.Contains("BoneProperty"))
+                        BoneProperty(Path.Combine(folderpath, f));
+                    else if (f.Contains("Anime"))
+                        Anime(Path.Combine(folderpath, f));
+                    else if (f.Contains("Physics"))
+                        Physics(Path.Combine(folderpath, f));
+                }
+                WriteNode("End");
             }
-            WriteNode("End");
-            bw.Close();
         }
         
         void MeshData(string path)
