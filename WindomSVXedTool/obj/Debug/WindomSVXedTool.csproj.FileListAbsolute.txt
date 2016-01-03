@@ -15,3 +15,6 @@ C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\Windom-
 C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\Windom-SV-xed-Tool\WindomSVXedTool\obj\Debug\WindomSVXedTool.Form1.resources
 C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\Windom-SV-xed-Tool\WindomSVXedTool\obj\Debug\WindomSVXedTool.Properties.Resources.resources
 C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\Windom-SV-xed-Tool\WindomSVXedTool\obj\Debug\WindomSVXedTool.csproj.GenerateResource.Cache
+C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\Windom-SV-xed-Tool\WindomSVXedTool\bin\Debug\WindomSVXedTool.exe.config
+C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\Windom-SV-xed-Tool\WindomSVXedTool\obj\Debug\WindomSVXedTool.exe
+C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\Windom-SV-xed-Tool\WindomSVXedTool\obj\Debug\WindomSVXedTool.pdb
