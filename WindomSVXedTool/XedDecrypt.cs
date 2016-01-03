@@ -309,8 +309,8 @@ namespace WindomSVXedTool
             {
                 case "Physics":
                     xw = XmlWriter.Create(Folder + "\\Physics_" + PhysicsCount + ".xml", xws);
-                    PhysicsCount++;
                     filelist.Add("Physics_" + PhysicsCount + ".xml");
+                    PhysicsCount++;
                     xw.WriteStartDocument();
                     xw.WriteStartElement("Physics");
                     break;
@@ -331,7 +331,7 @@ namespace WindomSVXedTool
                     break;
                 case "Name":
                     xw.WriteStartElement("Name");
-                    xw.WriteAttributeString("text", ReadText());
+                    xw.WriteAttributeString("Text", ReadText());
 
                     break;
                 case "BoneIdx":

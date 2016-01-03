@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?><AnimeName Name="ショット右後" ID="57"><Windom_TopScript>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  Act_Shot(PNo);
+}
+
+ENDSQUIRREL;
+
+TS_ActionType = AT_SHOT;
+'各方向用
+'TS_ShotL = 102;
+'TS_ShotR = 101;
+
+'武器切り替え
+IF(@EqMode ,==, 1);
+  @AttackFlag = 1;
+  ChangeAnime(68,0,0,1);
+  ChangeParts(25,0,TRUE,1,0.1,1);
+'  ChangeScript(68,-1,1);
+  TSD_ChangeAnime(-100);
+  TSD_ChangeScript(-100);
+  EXIT;
+ENDIF;
+
+'StopShot
+IF(@TargetDot ,&lt;, -0.2);
+  TSD_ChangeAnime(103);
+  TSD_ChangeScript(103);
+  TSD_ChangeProc(9);
+  @Friction = 0.98;
+  EXIT;
+ENDIF;
+
+'攻撃
+IF(@int[151]  ,==,    0);
+  @AttackFlag = 1;
+  GetPartsInfo(0);
+  IF(@NowActNo ,==, 22); 'BoostShot
+    ChangeAnime(106,0,0,    1);
+    ChangeParts(26,0,TRUE,1,0.1, 1);
+    ChangeScript(106,-1,    1);
+    TSD_ChangeAnime(-100);
+    TSD_ChangeScript(-100);
+    EXIT;
+  ELSEIF(@NowActNo ,==, 25); 'HenkeiShot
+    ChangeAnime(113,0,0,    1);
+    ChangeParts(26,0,TRUE,1,0.1, 1);
+    ChangeScript(113,-1,    1);
+    TSD_ChangeAnime(-100);
+    TSD_ChangeScript(-100);
+    EXIT;
+  ELSE;  'Normal Shot
+    ChangeAnime(100,0,0,    1);
+    ChangeParts(26,0,TRUE,1,0.1, 1);
+    ChangeScript(100,-1,    1);
+
+'    ChangeAnime(101,0,0,    2);
+'    ChangeParts(26,0,TRUE, 1, 0.1, 2);
+
+    TSD_ChangeAnime(-100);
+    TSD_ChangeScript(-100);
+    EXIT;
+  ENDIF;
+ENDIF;
+
+ 
+
+</Windom_TopScript><ScriptKey Count="0" /><BoneData><BoneName Text="Body.x"><RotateKey Count="4" /><Time Value="0"><Rota x="0.1320861" y="0.6751581" z="-0.1161426" w="0.7163977" /><CalcType Value="0" /></Time><Time Value="6"><Rota x="0.0878072" y="0.6520224" z="-0.1806016" w="0.7311223" /><CalcType Value="0" /></Time><Time Value="31"><Rota x="0.08780679" y="0.6520209" z="-0.1806008" w="0.7311239" /><CalcType Value="0" /></Time><Time Value="56"><Rota x="0.1320861" y="0.6751584" z="-0.1161428" w="0.7163975" /><CalcType Value="0" /></Time><ScaleKey Count="1" /><Time Value="0"><Scale x="0.9999994" y="0.9999997" z="0.9999993" /><CalcType Value="0" /></Time><PosKey Count="4" /><Time Value="0"><Pos x="0" y="-0.0007878406" z="0" /><CalcType Value="0" /></Time><Time Value="6"><Pos x="0" y="-0.0007878406" z="0" /><CalcType Value="0" /></Time><Time Value="31"><Pos x="0" y="-0.0007878406" z="0" /><CalcType Value="0" /></Time><Time Value="56"><Pos x="0" y="-0.0007878406" z="0" /><CalcType Value="0" /></Time></BoneName><BoneName Text="arm_rotation_r.x"><RotateKey Count="4" /><Time Value="0"><Rota x="-0.1609201" y="0.3650655" z="-0.06563267" w="0.914617" /><CalcType Value="0" /></Time><Time Value="6"><Rota x="-0.1726416" y="0.7622696" z="-0.09265314" w="0.6168918" /><CalcType Value="0" /></Time><Time Value="31"><Rota x="-0.1726419" y="0.7622691" z="-0.09265203" w="0.6168924" /><CalcType Value="0" /></Time><Time Value="56"><Rota x="-0.1544856" y="0.4356919" z="-0.07807894" w="0.8832952" /><CalcType Value="0" /></Time><ScaleKey Count="1" /><Time Value="0"><Scale x="1" y="1" z="1" /><CalcType Value="0" /></Time><PosKey Count="4" /><Time Value="0"><Pos x="0.1762796" y="0.2242762" z="-0.04467139" /><CalcType Value="0" /></Time><Time Value="6"><Pos x="0.1762796" y="0.2242762" z="-0.04467139" /><CalcType Value="0" /></Time><Time Value="31"><Pos x="0.1762796" y="0.2242762" z="-0.04467139" /><CalcType Value="0" /></Time><Time Value="56"><Pos x="0.1762796" y="0.2242762" z="-0.04467139" /><CalcType Value="0" /></Time></BoneName><BoneName Text="arm1_1_r.x"><RotateKey Count="4" /><Time Value="0"><Rota x="-0.2214706" y="-0.09689448" z="0.2179675" w="0.9455435" /><CalcType Value="0" /></Time><Time Value="6"><Rota x="-0.5103728" y="-0.2041161" z="0.1018052" w="0.8291514" /><CalcType Value="0" /></Time><Time Value="31"><Rota x="-0.5103728" y="-0.2041161" z="0.1018052" w="0.8291514" /><CalcType Value="0" /></Time><Time Value="56"><Rota x="-0.2214711" y="-0.09689417" z="0.217968" w="0.9455432" /><CalcType Value="0" /></Time><ScaleKey Count="1" /><Time Value="0"><Scale x="0.9999927" y="0.9999858" z="0.9999854" /><CalcType Value="0" /></Time><PosKey Count="4" /><Time Value="0"><Pos x="0" y="0" z="0" /><CalcType Value="0" /></Time><Time Value="6"><Pos x="0" y="0" z="0" /><CalcType Value="0" /></Time><Time Value="31"><Pos x="0" y="0" z="0" /><CalcType Value="0" /></Time><Time Value="56"><Pos x="0" y="0" z="0" /><CalcType Value="0" /></Time></BoneName><BoneName Text="kata_r.x"><RotateKey Count="4" /><Time Value="0"><Rota x="0" y="0" z="-0.1736482" w="0.9848077" /><CalcType Value="0" /></Time><Time Value="6"><Rota x="0" y="0" z="-0.1736482" w="0.9848077" /><CalcType Value="0" /></Time><Time Value="31"><Rota x="0" y="0" z="-0.1736482" w="0.9848077" /><CalcType Value="0" /></Time><Time Value="56"><Rota x="0" y="0" z="-0.1736482" w="0.9848077" /><CalcType Value="0" /></Time><ScaleKey Count="1" /><Time Value="0"><Scale x="1" y="1" z="1" /><CalcType Value="0" /></Time><PosKey Count="4" /><Time Value="0"><Pos x="0.0345449" y="-0.007214194" z="-0.001344743" /><CalcType Value="0" /></Time><Time Value="6"><Pos x="0.0345449" y="-0.007214194" z="-0.001344743" /><CalcType Value="0" /></Time><Time Value="31"><Pos x="0.0345449" y="-0.007214194" z="-0.001344743" /><CalcType Value="0" /></Time><Time Value="56"><Pos x="0.0345449" y="-0.007214194" z="-0.001344743" /><CalcType Value="0" /></Time></BoneName><BoneName Text="Output08.x"><RotateKey Count="4" /><Time Value="0"><Rota x="-0.4999226" y="0.5001322" z="-0.4999581" w="0.4999872" /><CalcType Value="0" /></Time><Time Value="6"><Rota x="-0.4999226" y="0.5001322" z="-0.4999581" w="0.4999872" /><CalcType Value="0" /></Time><Time Value="31"><Rota x="-0.4999226" y="0.5001322" z="-0.4999581" w="0.4999872" /><CalcType Value="0" /></Time><Time Value="56"><Rota x="-0.4999226" y="0.5001322" z="-0.4999581" w="0.4999872" /><CalcType Value="0" /></Time><ScaleKey Count="1" /><Time Value="0"><Scale x="1.000578" y="1.000578" z="1.000578" /><CalcType Value="0" /></Time><PosKey Count="4" /><Time Value="0"><Pos x="0.2042692" y="0.09906642" z="-0.0005772723" /><CalcType Value="0" /></Time><Time Value="6"><Pos x="0.2042692" y="0.09906642" z="-0.0005772723" /><CalcType Value="0" /></Time><Time Value="31"><Pos x="0.2042692" y="0.09906642" z="-0.0005772723" /><CalcType Value="0" /></Time><Time Value="56"><Pos x="0.2042692" y="0.09906642" z="-0.0005772723" /><CalcType Value="0" /></Time></BoneName><BoneName Text="arm1_2_r.x"><RotateKey Count="4" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="0" /></Time><Time Value="6"><Rota x="0" y="0.1822326" z="0" w="0.9832554" /><CalcType Value="0" /></Time><Time Value="31"><Rota x="0" y="0.1822326" z="0" w="0.9832554" /><CalcType Value="0" /></Time><Time Value="56"><Rota x="0" y="0.02617657" z="0" w="0.9996573" /><CalcType Value="0" /></Time><ScaleKey Count="1" /><Time Value="0"><Scale x="1" y="1" z="1" /><CalcType Value="0" /></Time><PosKey Count="1" /><Time Value="0"><Pos x="0.05099998" y="-0.05999999" z="0.0009999998" /><CalcType Value="0" /></Time></BoneName><BoneName Text="arm2_r.x"><RotateKey Count="4" /><Time Value="0"><Rota x="-0.3907251" y="0" z="0" w="0.9205074" /><CalcType Value="0" /></Time><Time Value="6"><Rota x="-0.2249473" y="0" z="0" w="0.974371" /><CalcType Value="0" /></Time><Time Value="31"><Rota x="-0.2249473" y="0" z="0" w="0.974371" /><CalcType Value="0" /></Time><Time Value="56"><Rota x="-0.4999927" y="0" z="0" w="0.8660296" /><CalcType Value="0" /></Time><ScaleKey Count="1" /><Time Value="0"><Scale x="0.999992" y="0.9999895" z="0.9999884" /><CalcType Value="0" /></Time><PosKey Count="4" /><Time Value="0"><Pos x="-0.0004452467" y="-0.1584951" z="0" /><CalcType Value="0" /></Time><Time Value="6"><Pos x="-0.0004452467" y="-0.1584951" z="0" /><CalcType Value="0" /></Time><Time Value="31"><Pos x="-0.0004452467" y="-0.1584951" z="0" /><CalcType Value="0" /></Time><Time Value="56"><Pos x="-0.0004452467" y="-0.1584951" z="0" /><CalcType Value="0" /></Time></BoneName><BoneName Text="Hand_r.x"><RotateKey Count="4" /><Time Value="0"><Rota x="-0.0174515" y="0" z="0" w="0.9998477" /><CalcType Value="0" /></Time><Time Value="6"><Rota x="-0.01745115" y="0" z="0" w="0.9998478" /><CalcType Value="0" /></Time><Time Value="31"><Rota x="-0.01745115" y="0" z="0" w="0.9998478" /><CalcType Value="0" /></Time><Time Value="56"><Rota x="-0.0174515" y="0" z="0" w="0.9998477" /><CalcType Value="0" /></Time><ScaleKey Count="1" /><Time Value="0"><Scale x="1" y="1" z="1" /><CalcType Value="0" /></Time><PosKey Count="4" /><Time Value="0"><Pos x="0" y="-0.2842203" z="0" /><CalcType Value="0" /></Time><Time Value="6"><Pos x="0" y="-0.2842203" z="0" /><CalcType Value="0" /></Time><Time Value="31"><Pos x="0" y="-0.2842203" z="0" /><CalcType Value="0" /></Time><Time Value="56"><Pos x="0" y="-0.2842203" z="0" /><CalcType Value="0" /></Time></BoneName><BoneName Text="gun.x"><RotateKey Count="4" /><Time Value="0"><Rota x="0.008726387" y="0" z="0" w="0.9999619" /><CalcType Value="0" /></Time><Time Value="6"><Rota x="0.008726387" y="0" z="0" w="0.9999619" /><CalcType Value="0" /></Time><Time Value="31"><Rota x="0.008726387" y="0" z="0" w="0.9999619" /><CalcType Value="0" /></Time><Time Value="56"><Rota x="0.008726387" y="0" z="0" w="0.9999619" /><CalcType Value="0" /></Time><ScaleKey Count="1" /><Time Value="0"><Scale x="1" y="1" z="1" /><CalcType Value="0" /></Time><PosKey Count="4" /><Time Value="0"><Pos x="-0.0195671" y="-0.07869908" z="-0.007895427" /><CalcType Value="0" /></Time><Time Value="6"><Pos x="-0.0195671" y="-0.07869908" z="-0.007895427" /><CalcType Value="0" /></Time><Time Value="31"><Pos x="-0.0195671" y="-0.07869908" z="-0.007895427" /><CalcType Value="0" /></Time><Time Value="56"><Pos x="-0.0195671" y="-0.07869908" z="-0.007895427" /><CalcType Value="0" /></Time></BoneName><BoneName Text="Weapon_point.x"><RotateKey Count="4" /><Time Value="0"><Rota x="0.7132509" y="0" z="0" w="0.7009088" /><CalcType Value="0" /></Time><Time Value="6"><Rota x="0.7132509" y="0" z="0" w="0.7009088" /><CalcType Value="0" /></Time><Time Value="31"><Rota x="0.7132509" y="0" z="0" w="0.7009088" /><CalcType Value="0" /></Time><Time Value="56"><Rota x="0.7132509" y="0" z="0" w="0.7009088" /><CalcType Value="0" /></Time><ScaleKey Count="1" /><Time Value="0"><Scale x="1" y="1" z="1" /><CalcType Value="0" /></Time><PosKey Count="4" /><Time Value="0"><Pos x="-0.0005992358" y="-0.8189633" z="0.1489993" /><CalcType Value="0" /></Time><Time Value="6"><Pos x="-0.0005992358" y="-0.8189633" z="0.1489993" /><CalcType Value="0" /></Time><Time Value="31"><Pos x="-0.0005992358" y="-0.8189633" z="0.1489993" /><CalcType Value="0" /></Time><Time Value="56"><Pos x="-0.0005992358" y="-0.8189633" z="0.1489993" /><CalcType Value="0" /></Time></BoneName><BoneName Text="katana.x"><RotateKey Count="4" /><Time Value="0"><Rota x="0" y="2.617994E-08" z="0" w="1" /><CalcType Value="0" /></Time><Time Value="6"><Rota x="0" y="2.617994E-08" z="0" w="1" /><CalcType Value="0" /></Time><Time Value="31"><Rota x="0" y="2.617994E-08" z="0" w="1" /><CalcType Value="0" /></Time><Time Value="56"><Rota x="0" y="2.617994E-08" z="0" w="1" /><CalcType Value="0" /></Time><ScaleKey Count="1" /><Time Value="0"><Scale x="1" y="1" z="1" /><CalcType Value="0" /></Time><PosKey Count="4" /><Time Value="0"><Pos x="-0.02105235" y="-0.05606708" z="-0.101124" /><CalcType Value="0" /></Time><Time Value="6"><Pos x="-0.02105235" y="-0.05606708" z="-0.101124" /><CalcType Value="0" /></Time><Time Value="31"><Pos x="-0.02105235" y="-0.05606708" z="-0.101124" /><CalcType Value="0" /></Time><Time Value="56"><Pos x="-0.02105235" y="-0.05606708" z="-0.101124" /><CalcType Value="0" /></Time></BoneName><BoneName Text="Weapon_point2.x"><RotateKey Count="4" /><Time Value="0"><Rota x="0.008726389" y="0" z="0" w="0.9999619" /><CalcType Value="0" /></Time><Time Value="6"><Rota x="0.008726389" y="0" z="0" w="0.9999619" /><CalcType Value="0" /></Time><Time Value="31"><Rota x="0.008726389" y="0" z="0" w="0.9999619" /><CalcType Value="0" /></Time><Time Value="56"><Rota x="0.008726389" y="0" z="0" w="0.9999619" /><CalcType Value="0" /></Time><ScaleKey Count="1" /><Time Value="0"><Scale x="1" y="1" z="1" /><CalcType Value="0" /></Time><PosKey Count="4" /><Time Value="0"><Pos x="0" y="-0.01542982" z="0.2208525" /><CalcType Value="0" /></Time><Time Value="6"><Pos x="0" y="-0.01542982" z="0.2208525" /><CalcType Value="0" /></Time><Time Value="31"><Pos x="0" y="-0.01542982" z="0.2208525" /><CalcType Value="0" /></Time><Time Value="56"><Pos x="0" y="-0.01542982" z="0.2208525" /><CalcType Value="0" /></Time></BoneName></BoneData></AnimeName>

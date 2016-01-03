@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?><AnimeName Name="?" ID="120"><Windom_TopScript>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  return Act_Sword1(PNo,0,0);
+}
+
+ENDSQUIRREL;
+
+ 
+
+</Windom_TopScript><ScriptKey Count="13" /><Time Value="0"><ScriptText>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  Weapon_Bullet2();
+
+  Robo.GetPartsData(10).ChangeAct(158,0,0,1, // animeNo,pos,dura,CalcType
+	TRUE,1,1);  // enable,weight,weightspeed
+
+  return 1;
+}
+
+ENDSQUIRREL;
+ 
+
+</ScriptText></Time><Time Value="6"><ScriptText>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  Weapon_Bullet2();
+
+  Robo.GetPartsData(10).ChangeAct(158,0,0,1, // animeNo,pos,dura,CalcType
+	TRUE,1,1);  // enable,weight,weightspeed
+
+  return 1;
+}
+
+ENDSQUIRREL;
+ 
+
+</ScriptText></Time><Time Value="13"><ScriptText>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  Weapon_Bullet2();
+
+  Robo.GetPartsData(10).ChangeAct(158,0,0,1, // animeNo,pos,dura,CalcType
+	TRUE,1,1);  // enable,weight,weightspeed
+
+  return 1;
+}
+
+ENDSQUIRREL;
+ 
+
+</ScriptText></Time><Time Value="20"><ScriptText>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  Weapon_Bullet2();
+
+  Robo.GetPartsData(10).ChangeAct(158,0,0,1, // animeNo,pos,dura,CalcType
+	TRUE,1,1);  // enable,weight,weightspeed
+
+  return 1;
+}
+
+ENDSQUIRREL;
+ 
+
+</ScriptText></Time><Time Value="27"><ScriptText>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  Weapon_Bullet2();
+
+  Robo.GetPartsData(10).ChangeAct(158,0,0,1, // animeNo,pos,dura,CalcType
+	TRUE,1,1);  // enable,weight,weightspeed
+
+  return 1;
+}
+
+ENDSQUIRREL;
+ 
+
+</ScriptText></Time><Time Value="34"><ScriptText>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  Weapon_Bullet2();
+
+  Robo.GetPartsData(10).ChangeAct(158,0,0,1, // animeNo,pos,dura,CalcType
+	TRUE,1,1);  // enable,weight,weightspeed
+
+  return 1;
+}
+
+ENDSQUIRREL;
+ 
+
+</ScriptText></Time><Time Value="41"><ScriptText>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  Weapon_Bullet2();
+
+  Robo.GetPartsData(10).ChangeAct(158,0,0,1, // animeNo,pos,dura,CalcType
+	TRUE,1,1);  // enable,weight,weightspeed
+
+  return 1;
+}
+
+ENDSQUIRREL;
+ 
+
+</ScriptText></Time><Time Value="48"><ScriptText>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  Weapon_Bullet2();
+
+  Robo.GetPartsData(10).ChangeAct(158,0,0,1, // animeNo,pos,dura,CalcType
+	TRUE,1,1);  // enable,weight,weightspeed
+
+  return 1;
+}
+
+ENDSQUIRREL;
+ 
+
+</ScriptText></Time><Time Value="55"><ScriptText>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  Weapon_Bullet2();
+
+  Robo.GetPartsData(10).ChangeAct(158,0,0,1, // animeNo,pos,dura,CalcType
+	TRUE,1,1);  // enable,weight,weightspeed
+
+  return 1;
+}
+
+ENDSQUIRREL;
+ 
+
+</ScriptText></Time><Time Value="62"><ScriptText>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  Weapon_Bullet2();
+
+  Robo.GetPartsData(10).ChangeAct(158,0,0,1, // animeNo,pos,dura,CalcType
+	TRUE,1,1);  // enable,weight,weightspeed
+
+  return 1;
+}
+
+ENDSQUIRREL;
+ 
+
+</ScriptText></Time><Time Value="69"><ScriptText>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  Weapon_Bullet2();
+
+  Robo.GetPartsData(10).ChangeAct(158,0,0,1, // animeNo,pos,dura,CalcType
+	TRUE,1,1);  // enable,weight,weightspeed
+
+  return 1;
+}
+
+ENDSQUIRREL;
+ 
+
+</ScriptText></Time><Time Value="72"><ScriptText>
+
+
+SQUIRREL;
+
+function Run(PNo)
+{
+  if(Robo.m_CatchChara){
+    g_AnimeMgr[0].ChangeAnime(159,0,0);
+	Robo.m_CamMode = 10;
+  }
+  return 1;
+}
+
+ENDSQUIRREL;
+
+ 
+
+</ScriptText></Time><Time Value="119"><ScriptText>
+
+
+SQUIRREL;
+
+function Run(PNo){
+  Robo.m_CamMode = 0;
+
+/*
+  if(Robo.m_CatchChara){
+    local robo = Robo.m_CatchChara;
+    // 抜けられた
+    if(robo){
+      robo.m_Catch.m_lpCatchMe = null;
+    }
+  }
+*/
+  return 0;
+}
+
+ENDSQUIRREL;
+
+ 
+
+</ScriptText></Time><BoneData><BoneName Text="root.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time><PosKey Count="2" /><Time Value="0"><Pos x="0" y="0" z="0" /><CalcType Value="0" /></Time><Time Value="119"><Pos x="0" y="0" z="3.948945" /><CalcType Value="0" /></Time></BoneName><BoneName Text="BodyBase"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time><PosKey Count="1" /><Time Value="0"><Pos x="0" y="1.049899" z="0" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Body_d.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="BodyUp"><RotateKey Count="1" /><Time Value="0"><Rota x="-0.3684591" y="0.1848833" z="-0.2277991" w="0.8821358" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Body.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.3906808" y="-0.3334825" z="0.06521799" w="0.8555142" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="arm_rotation_r.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="arm1_1_r.x"><RotateKey Count="1" /><Time Value="0"><Rota x="-0.2796132" y="-0.2514097" z="0.5675099" w="0.7324904" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="kata_r.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0" z="-0.573568" w="0.8191579" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Output08.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.5000594" y="-0.4999811" z="0.4999653" w="-0.4999943" /><CalcType Value="0" /></Time></BoneName><BoneName Text="arm1_2_r.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0.1800689" z="0" w="0.983654" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="arm2_r.x"><RotateKey Count="1" /><Time Value="0"><Rota x="-0.2885548" y="0" z="0" w="0.9574634" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Hand_r.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.4808375" y="0.3527462" z="-0.2215468" w="0.7715455" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="gun.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.008726387" y="0" z="0" w="0.9999619" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Weapon_point.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.7132509" y="0" z="0" w="0.7009088" /><CalcType Value="0" /></Time></BoneName><BoneName Text="katana.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.165045" y="2.582092E-08" z="-4.320866E-09" w="0.986286" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Weapon_point2.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.008726389" y="0" z="0" w="0.9999619" /><CalcType Value="0" /></Time></BoneName><BoneName Text="NageP"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="1" z="0" w="-2.576525E-05" /><CalcType Value="1" /><PowVal Value="1" /></Time><PosKey Count="1" /><Time Value="0"><Pos x="-2.321288E-05" y="-0.0678228" z="0.8154508" /><CalcType Value="0" /></Time></BoneName><BoneName Text="arm_rotation.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="arm1_1.x"><RotateKey Count="1" /><Time Value="0"><Rota x="-0.3134076" y="0.1310032" z="-0.5959678" w="0.7276238" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="kata.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Output07.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.4962482" y="-0.496248" z="-0.4962479" w="0.5110905" /><CalcType Value="0" /></Time></BoneName><BoneName Text="arm1_2.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0.1037951" z="0" w="0.9945987" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="arm2.x"><RotateKey Count="1" /><Time Value="0"><Rota x="-0.6544523" y="0" z="0" w="0.7561033" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Hand.x"><RotateKey Count="1" /><Time Value="0"><Rota x="-0.06972189" y="-0.002158704" z="0.03087143" w="0.9970863" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="machine_gun.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.008726387" y="0" z="0" w="0.9999619" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Weapon_MachineGun"><RotateKey Count="1" /><Time Value="0"><Rota x="0.7132509" y="0" z="0" w="0.7009088" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Shield.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="-0.7070197" z="0" w="0.7071939" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Shield_point.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="0" /></Time></BoneName><BoneName Text="b_main.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Output01.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.9099532" y="0" z="0" w="0.4147108" /><CalcType Value="0" /></Time></BoneName><BoneName Text="Output02.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.9099533" y="0" z="0" w="0.4147108" /><CalcType Value="0" /></Time></BoneName><BoneName Text="Output09.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="1" z="0" w="2.630154E-05" /><CalcType Value="0" /></Time></BoneName><BoneName Text="Head.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.0317137" y="0.2194645" z="0.05206279" w="0.9737141" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Body2.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.1176524" y="-0.325279" z="-0.0405974" w="0.9373918" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="leg1.x"><RotateKey Count="1" /><Time Value="0"><Rota x="-0.6393471" y="-0.2565775" z="-0.205266" w="0.6951756" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="leg2.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.707612" y="0" z="0" w="0.7066013" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="leg3.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.2503759" y="0" z="0" w="0.9681487" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Output03.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.2705979" y="-0.653281" z="0.2705979" w="0.6532822" /><CalcType Value="0" /></Time></BoneName><BoneName Text="Output05.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.9612611" y="0" z="0" w="0.2756394" /><CalcType Value="0" /></Time></BoneName><BoneName Text="leg1_r.x"><RotateKey Count="1" /><Time Value="0"><Rota x="-0.4737584" y="-0.1117941" z="0.2435069" w="0.8389037" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="leg2_r.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.5173869" y="0" z="0" w="0.8557516" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="leg3_r.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.1908053" y="0" z="0" w="0.9816279" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="Output04.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.2705684" y="0.6532094" z="-0.2705646" w="0.6533798" /><CalcType Value="0" /></Time></BoneName><BoneName Text="Output06.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.9612612" y="0" z="0" w="0.2756392" /><CalcType Value="0" /></Time></BoneName><BoneName Text="Weapon_point_AsiR.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0.7072645" y="0" z="0" w="0.706949" /><CalcType Value="0" /></Time></BoneName><BoneName Text="Weapon_Leg_r"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="legG.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="-0.06104723" z="0" w="0.9981349" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="legG_r.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0.06105446" z="0" w="0.9981344" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="legSG.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0" z="-0.1908058" w="0.9816278" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="saya.x"><RotateKey Count="1" /><Time Value="0"><Rota x="-0.258819" y="0" z="0" w="0.9659258" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="katana_dammy.x"><RotateKey Count="1" /><Time Value="0"><Rota x="2.780595E-08" y="3.124935E-08" z="-8.689177E-16" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="gun_dammy.x"><RotateKey Count="1" /><Time Value="0"><Rota x="-0.007692542" y="0.8871379" z="0.4614023" w="0.005923162" /><CalcType Value="0" /></Time></BoneName><BoneName Text="legSG_r.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="legBG.x"><RotateKey Count="1" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="CamPoint"><RotateKey Count="2" /><Time Value="0"><Rota x="0.1255871" y="0.8917564" z="-0.1120258" w="0.420058" /><CalcType Value="0" /></Time><Time Value="72"><Rota x="0.04483019" y="0.8898419" z="-0.16675" w="0.4223341" /><CalcType Value="0" /></Time><PosKey Count="9" /><Time Value="0"><Pos x="-1.504317" y="1.846809" z="2.511938" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="15"><Pos x="-1.383477" y="1.86915" z="2.480282" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="29"><Pos x="-1.456549" y="1.805153" z="2.587758" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="43"><Pos x="-1.582359" y="1.768071" z="2.620888" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="58"><Pos x="-1.504317" y="1.846809" z="2.511938" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="72"><Pos x="-1.383477" y="1.86915" z="2.480282" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="86"><Pos x="-1.456549" y="1.805153" z="2.587758" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="100"><Pos x="-1.582359" y="1.768071" z="2.620888" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="113"><Pos x="-1.504317" y="1.846809" z="2.511938" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName></BoneData></AnimeName>

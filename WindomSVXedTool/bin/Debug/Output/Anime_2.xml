@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><AnimeName Name="" ID="120"><Windom_TopScript>
+
+
+'装備による切替
+IF(@int[152] ,==, 1);
+  TSD_ChangeAnime(52);
+ENDIF;
+
+ 
+
+</Windom_TopScript><ScriptKey Count="0" /><BoneData /></AnimeName>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?><AnimeName Name="BoostShot左腕" ID="5"><Windom_TopScript>
+
+
+TS_ActionType = AT_SUBWEAPON2;
+
+
+ 
+
+</Windom_TopScript><ScriptKey Count="2" /><Time Value="0"><ScriptText>
+
+
+
+ 
+
+</ScriptText></Time><Time Value="4"><ScriptText>
+
+
+ChangeParts(-100,0,FALSE,0,0.05,-1);
+
+ 
+
+</ScriptText></Time><BoneData><BoneName Text="arm1_1.x"><RotateKey Count="3" /><Time Value="0"><Rota x="-0.04693083" y="0.3178833" z="-0.449746" w="0.8333524" /><CalcType Value="0" /></Time><Time Value="2"><Rota x="0.0423774" y="0.2712369" z="-0.4509811" w="0.8492649" /><CalcType Value="0" /></Time><Time Value="4"><Rota x="-0.04693083" y="0.3178833" z="-0.449746" w="0.8333524" /><CalcType Value="0" /></Time></BoneName><BoneName Text="arm1_2.x"><RotateKey Count="3" /><Time Value="0"><Rota x="0" y="-0.1016068" z="0" w="0.9948246" /><CalcType Value="0" /></Time><Time Value="2"><Rota x="0" y="-0.08698873" z="0" w="0.9962093" /><CalcType Value="0" /></Time><Time Value="4"><Rota x="0" y="-0.1016068" z="0" w="0.9948246" /><CalcType Value="0" /></Time></BoneName><BoneName Text="arm2.x"><RotateKey Count="3" /><Time Value="0"><Rota x="-0.5145962" y="0" z="0" w="0.8574327" /><CalcType Value="0" /></Time><Time Value="2"><Rota x="-0.6209285" y="0" z="0" w="0.7838673" /><CalcType Value="0" /></Time><Time Value="4"><Rota x="-0.5145962" y="0" z="0" w="0.8574327" /><CalcType Value="0" /></Time></BoneName><BoneName Text="Hand.x"><RotateKey Count="3" /><Time Value="0"><Rota x="-0.120137" y="-0.4524713" z="-0.1106118" w="0.8766994" /><CalcType Value="0" /></Time><Time Value="2"><Rota x="-0.1030385" y="-0.4394807" z="-0.1354385" w="0.8819842" /><CalcType Value="0" /></Time><Time Value="4"><Rota x="-0.120137" y="-0.4524713" z="-0.1106118" w="0.8766994" /><CalcType Value="0" /></Time></BoneName></BoneData></AnimeName>

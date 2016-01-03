@@ -9,3 +9,9 @@ C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\WindomS
 C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\Windom-SV-xed-Tool\WindomSVXedTool\bin\Debug\WindomSVXedTool.exe.config
 C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\Windom-SV-xed-Tool\WindomSVXedTool\obj\Debug\WindomSVXedTool.exe
 C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\Windom-SV-xed-Tool\WindomSVXedTool\obj\Debug\WindomSVXedTool.pdb
+C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\Windom-SV-xed-Tool\WindomSVXedTool\bin\Debug\WindomSVXedTool.exe
+C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\Windom-SV-xed-Tool\WindomSVXedTool\bin\Debug\WindomSVXedTool.pdb
+C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\Windom-SV-xed-Tool\WindomSVXedTool\obj\Debug\WindomSVXedTool.csprojResolveAssemblyReference.cache
+C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\Windom-SV-xed-Tool\WindomSVXedTool\obj\Debug\WindomSVXedTool.Form1.resources
+C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\Windom-SV-xed-Tool\WindomSVXedTool\obj\Debug\WindomSVXedTool.Properties.Resources.resources
+C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\WindomSVXedTool\Windom-SV-xed-Tool\WindomSVXedTool\obj\Debug\WindomSVXedTool.csproj.GenerateResource.Cache

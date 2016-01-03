@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><AnimeName Name="Shot右腕" ID="22"><Windom_TopScript>
+
+
+TS_ActionType = AT_SUBWEAPON2;
+
+
+ 
+
+</Windom_TopScript><ScriptKey Count="2" /><Time Value="0"><ScriptText>
+
+
+
+ 
+
+</ScriptText></Time><Time Value="21"><ScriptText>
+
+
+ChangeParts(-100,0,FALSE,0,0.05,-1);
+
+SQUIRREL;
+
+function Run(PNo){
+  Robo.GetPartsData(PNo).Enable = 0;
+  Robo.GetPartsData(PNo).SetWeight(0, 0.1);
+  return 0;
+}
+
+ENDSQUIRREL;
+ 
+
+</ScriptText></Time><BoneData><BoneName Text="Body.x"><RotateKey Count="5" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="3"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="7"><Rota x="-0.03463878" y="0.1206813" z="0.01696036" w="0.9919418" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="14"><Rota x="0.03392066" y="0.002686806" z="-0.004992716" w="0.9994084" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="21"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName><BoneName Text="arm2_r.x"><RotateKey Count="4" /><Time Value="0"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="5"><Rota x="-0.3583615" y="0" z="0" w="0.9335829" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="18"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time><Time Value="21"><Rota x="0" y="0" z="0" w="1" /><CalcType Value="1" /><PowVal Value="1" /></Time></BoneName></BoneData></AnimeName>

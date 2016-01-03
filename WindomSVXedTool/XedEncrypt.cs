@@ -24,6 +24,7 @@ namespace WindomSVXedTool
             {
                 filelist.Add(sr.ReadLine());
             } while (!sr.EndOfStream);
+
             bw.Write(new byte[] { 0x58, 0x45, 0x44 });
             for (int i = 0; i < filelist.Count; i++)
             {
@@ -33,10 +34,10 @@ namespace WindomSVXedTool
                     BoneProperty(folderpath + "\\" + filelist[i]);
                 else if (filelist[i].Contains("Anime"))
                     Anime(folderpath + "\\" + filelist[i]);
-                else if (filelist[i].Contains("Physics"))
-                    Physics(folderpath + "\\" + filelist[i]);
+                //else if (filelist[i].Contains("Physics"))
+                 //   Physics(folderpath + "\\" + filelist[i]);
             }
-            WriteNode("End");
+            //WriteNode("End");
             bw.Close();
         }
         
@@ -391,8 +392,9 @@ namespace WindomSVXedTool
 
                                     break;
                             }
-                            WriteNode(writeEnd);
+                            
                         }
+                        WriteNode(writeEnd);
                         break;
                     
                 }
