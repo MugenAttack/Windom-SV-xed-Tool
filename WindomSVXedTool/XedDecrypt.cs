@@ -122,17 +122,17 @@ namespace WindomSVXedTool
                     filelist.Add("BoneProperty.xml");
                     xw.WriteStartDocument();
                     xw.WriteStartElement("BoneProperty");
-                    xw.WriteAttributeString("Count", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Count", br.ReadInt32());
                     xw.WriteStartElement(ReadText());
                     break;
                 case "Level":
                     xw.WriteStartElement("Level");
-                    xw.WriteAttributeString("Value", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Value", br.ReadInt32());
                     xw.WriteEndElement();
                     break;
                 case "ParentBoneIdx":
                     xw.WriteStartElement("ParentBoneIdx");
-                    xw.WriteAttributeString("Value", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Value", br.ReadInt32());
                     xw.WriteEndElement();
                     break;
                 case "TransMat":
@@ -144,30 +144,30 @@ namespace WindomSVXedTool
                 case "OffsetMat":
                     xw.WriteStartElement("OffsetMat");
                     for (int i = 0; i < 16; i++)
-                        xw.WriteString(br.ReadSingle().ToString() + " ");
+                        xw.WriteString(br.ReadSingle() + " ");
 
                     xw.WriteEndElement();
                     break;
                 case "EulerMode":
                     xw.WriteStartElement("EulerMode");
-                    xw.WriteAttributeString("Value", br.ReadByte().ToString());
+                    xw.WriteAttributeString("Value", br.ReadByte());
                     xw.WriteEndElement();
                     break;
                 case "BoneLayers":
                     xw.WriteStartElement("BoneLayers");
-                    xw.WriteAttributeString("Value", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Value", br.ReadInt32());
                     xw.WriteEndElement();
                     break;
                 case "BoneFlag":
                     xw.WriteStartElement("BoneFlag");
-                    xw.WriteAttributeString("Value", br.ReadInt16().ToString());
-                    xw.WriteAttributeString("Value2", br.ReadInt16().ToString());
+                    xw.WriteAttributeString("Value", br.ReadInt16());
+                    xw.WriteAttributeString("Value2", br.ReadInt16());
                     xw.WriteEndElement();
                     break;
                 case "LimitAng":
                     xw.WriteStartElement("LimitAng");
                     for (int i = 0; i < 6; i++)
-                        xw.WriteString(br.ReadSingle().ToString() + " ");
+                        xw.WriteString(br.ReadSingle() + " ");
                     xw.WriteEndElement();
                     break;
                 case "Windom_FileName":
@@ -177,7 +177,7 @@ namespace WindomSVXedTool
                     break;
                 case "Windom_Hide":
                     xw.WriteStartElement("Windom_Hide");
-                    xw.WriteAttributeString("Value", br.ReadByte().ToString());
+                    xw.WriteAttributeString("Value", br.ReadByte());
                     xw.WriteEndElement();
                     break;
                 case "End":
@@ -202,7 +202,7 @@ namespace WindomSVXedTool
                     xw.WriteStartDocument();
                     xw.WriteStartElement("AnimeName");
                     xw.WriteAttributeString("Name", ReadText());
-                    xw.WriteAttributeString("ID", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("ID", br.ReadInt32());
                     break;
                 case "Windom_TopScript":
                     xw.WriteStartElement("Windom_TopScript");
@@ -211,12 +211,12 @@ namespace WindomSVXedTool
                     break;
                 case "ScriptKey":
                     xw.WriteStartElement("ScriptKey");
-                    xw.WriteAttributeString("Count", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Count", br.ReadInt32());
                     xw.WriteEndElement();
                     break;
                 case "Time":
                     xw.WriteStartElement("Time");
-                    xw.WriteAttributeString("Value", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Value", br.ReadInt32());
 
                     break;
                 case "ScriptText":
@@ -243,49 +243,42 @@ namespace WindomSVXedTool
                     break;
                 case "CalcType":
                     xw.WriteStartElement("CalcType");
-                    xw.WriteAttributeString("Value", br.ReadByte().ToString());
+                    xw.WriteAttributeString("Value", br.ReadByte());
                     xw.WriteEndElement();
                     break;
                 case "PowVal":
                     xw.WriteStartElement("PowVal");
-                    xw.WriteAttributeString("Value", br.ReadSingle().ToString());
+                    xw.WriteAttributeString("Value", br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "Pos":
                     xw.WriteStartElement("Pos");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "PosKey":
                     xw.WriteStartElement("PosKey");
-                    xw.WriteAttributeString("Count", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Count", br.ReadInt32());
                     xw.WriteEndElement();
                     break;
                 case "Rota":
                     xw.WriteStartElement("Rota");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("w", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "RotateKey":
                     xw.WriteStartElement("RotateKey");
-                    xw.WriteAttributeString("Count", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Count", br.ReadInt32());
                     xw.WriteEndElement();
                     break;
                 case "Scale":
                     xw.WriteStartElement("Scale");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "ScaleKey":
                     xw.WriteStartElement("ScaleKey");
-                    xw.WriteAttributeString("Count", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Count", br.ReadInt32());
                     xw.WriteEndElement();
                     break;
 
@@ -308,17 +301,17 @@ namespace WindomSVXedTool
                     break;
                 case "SizeRatio":
                     xw.WriteStartElement("SizeRatio");
-                    xw.WriteAttributeString("Value", br.ReadSingle().ToString());
+                    xw.WriteAttributeString("Value", br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "Gravity":
                     xw.WriteStartElement("Gravity");
-                    xw.WriteAttributeString("Value", br.ReadSingle().ToString());
+                    xw.WriteAttributeString("Value", br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "RigidBody":
                     xw.WriteStartElement("RigidBody");
-                    xw.WriteAttributeString("Count", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Count", br.ReadInt32());
                     xw.WriteEndElement();
                     break;
                 case "Name":
@@ -328,73 +321,67 @@ namespace WindomSVXedTool
                     break;
                 case "BoneIdx":
                     xw.WriteStartElement("BoneIdx");
-                    xw.WriteAttributeString("Value", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Value", br.ReadInt32());
                     xw.WriteEndElement();
                     break;
                 case "GroupNo":
                     xw.WriteStartElement("GroupNo");
-                    xw.WriteAttributeString("Value", br.ReadByte().ToString());
+                    xw.WriteAttributeString("Value", br.ReadByte());
                     xw.WriteEndElement();
                     break;
                 case "UnCollisionGroup":
                     xw.WriteStartElement("UnCollisionGroup");
-                    xw.WriteAttributeString("Value", br.ReadInt16().ToString());
+                    xw.WriteAttributeString("Value", br.ReadInt16());
                     xw.WriteEndElement();
                     break;
                 case "Shape":
                     xw.WriteStartElement("Shape");
-                    xw.WriteAttributeString("Value", br.ReadByte().ToString());
+                    xw.WriteAttributeString("Value", br.ReadByte());
                     xw.WriteEndElement();
                     break;
                 case "Size":
                     xw.WriteStartElement("Size");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "Pos":
                     xw.WriteStartElement("Pos");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "Rota":
                     xw.WriteStartElement("Rota");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "Mass":
                     xw.WriteStartElement("Mass");
-                    xw.WriteAttributeString("Value", br.ReadSingle().ToString());
+                    xw.WriteAttributeString("Value", br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "MoveAtte":
                     xw.WriteStartElement("MoveAtte");
-                    xw.WriteAttributeString("Value", br.ReadSingle().ToString());
+                    xw.WriteAttributeString("Value", br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "RotaAtte":
                     xw.WriteStartElement("RotaAtte");
-                    xw.WriteAttributeString("Value", br.ReadSingle().ToString());
+                    xw.WriteAttributeString("Value", br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "Repulsion":
                     xw.WriteStartElement("Repulsion");
-                    xw.WriteAttributeString("Value", br.ReadSingle().ToString());
+                    xw.WriteAttributeString("Value", br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "Fric":
                     xw.WriteStartElement("Fric");
-                    xw.WriteAttributeString("Value", br.ReadSingle().ToString());
+                    xw.WriteAttributeString("Value", br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "CalcType":
                     xw.WriteStartElement("CalcType");
-                    xw.WriteAttributeString("Value", br.ReadByte().ToString());
+                    xw.WriteAttributeString("Value", br.ReadByte());
                     xw.WriteEndElement();
                     break;
                 case "EndRigid":
@@ -402,88 +389,72 @@ namespace WindomSVXedTool
                     break;
                 case "Joint":
                     xw.WriteStartElement("Joint");
-                    xw.WriteAttributeString("Count", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Count", br.ReadInt32());
                     xw.WriteEndElement();
                     break;
                 case "Type":
                     xw.WriteStartElement("Type");
-                    xw.WriteAttributeString("Value", br.ReadByte().ToString());
+                    xw.WriteAttributeString("Value", br.ReadByte());
                     xw.WriteEndElement();
                     break;
                 case "CFM":
                     xw.WriteStartElement("CFM");
-                    xw.WriteAttributeString("Value", br.ReadSingle().ToString());
+                    xw.WriteAttributeString("Value", br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "ERP":
                     xw.WriteStartElement("ERP");
-                    xw.WriteAttributeString("Value", br.ReadSingle().ToString());
+                    xw.WriteAttributeString("Value", br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "RigidAIdx":
                     xw.WriteStartElement("RigidAIdx");
-                    xw.WriteAttributeString("Value", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Value", br.ReadInt32());
                     xw.WriteEndElement();
                     break;
                 case "RigidBIdx":
                     xw.WriteStartElement("RigidBIdx");
-                    xw.WriteAttributeString("Value", br.ReadInt32().ToString());
+                    xw.WriteAttributeString("Value", br.ReadInt32());
                     xw.WriteEndElement();
                     break;
                 case "MoveLimMin":
                     xw.WriteStartElement("MoveLimMin");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "MoveLimMax":
                     xw.WriteStartElement("MoveLimMax");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "RotaLimMin":
                     xw.WriteStartElement("RotaLimMin");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "RotaLimMax":
                     xw.WriteStartElement("RotaLimMax");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "SpringMoveVal":
                     xw.WriteStartElement("SpringMoveVal");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "SpringRotaVal":
                     xw.WriteStartElement("SpringRotaVal");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "SpringMoveDamp":
                     xw.WriteStartElement("SpringMoveDamp");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "SpringRotaDamp":
                     xw.WriteStartElement("SpringRotaDamp");
-                    xw.WriteAttributeString("x", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("y", br.ReadSingle().ToString());
-                    xw.WriteAttributeString("z", br.ReadSingle().ToString());
+                    xw.WriteVector(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
                     xw.WriteEndElement();
                     break;
                 case "EndJoint":
