@@ -13,12 +13,12 @@ namespace WindomSVXedTool
         BinaryWriter bw;
         XmlDocument Doc = new XmlDocument();
 
-        public void Encrypt(string path,string folderpath, string filename)
+        public void Encrypt(string path, string folderpath, string filename)
         {
             using (var stream = File.Create(Path.Combine(folderpath, filename + ".xed")))
             using (bw = new BinaryWriter(stream))
             {
-                bw.Write(new byte[] {0x58, 0x45, 0x44});
+                bw.Write(new byte[] { 0x58, 0x45, 0x44 });
                 foreach (string f in File.ReadLines(path))
                 {
                     if (f.Contains("MeshData"))
@@ -33,7 +33,7 @@ namespace WindomSVXedTool
                 WriteNode("End");
             }
         }
-        
+
         void MeshData(string path)
         {
             Console.WriteLine("MeshData Writing");
@@ -54,9 +54,9 @@ namespace WindomSVXedTool
             foreach (XmlNode Bone in Bones)
             {
                 WriteText(Bone.Name);
-                foreach(XmlNode data in Bone.ChildNodes)
+                foreach (XmlNode data in Bone.ChildNodes)
                 {
-                    switch(data.Name)
+                    switch (data.Name)
                     {
                         case "Level":
                             WriteNode("Level");
@@ -120,7 +120,6 @@ namespace WindomSVXedTool
             {
                 switch (node.Name)
                 {
-                
                     case "Windom_TopScript":
                         WriteNode("Windom_TopScript");
                         WriteText(node.InnerText);
@@ -132,7 +131,7 @@ namespace WindomSVXedTool
                     case "Time":
                         WriteNode(node.Name);
                         bw.Write(Int32.Parse(node.Attributes["Value"].Value));
-                       foreach (XmlNode time in node.ChildNodes)
+                        foreach (XmlNode time in node.ChildNodes)
                         {
                             if (time.Name == "ScriptText")
                             {
@@ -142,7 +141,6 @@ namespace WindomSVXedTool
                         }
                         WriteNode("End");
                         break;
-                  
                     case "BoneData":
                         WriteNode(node.Name);
                         foreach (XmlNode bone in node.ChildNodes)
@@ -152,9 +150,9 @@ namespace WindomSVXedTool
                                 case "BoneName":
                                     WriteNode(bone.Name);
                                     WriteText(bone.Attributes["Text"].Value);
-                                    foreach(XmlNode data in bone.ChildNodes)
+                                    foreach (XmlNode data in bone.ChildNodes)
                                     {
-                                        switch(data.Name)
+                                        switch (data.Name)
                                         {
                                             case "PosKey":
                                                 WriteNode(data.Name);
@@ -209,12 +207,10 @@ namespace WindomSVXedTool
                                         }
                                     }
                                     break;
-                               
                             }
                         }
                         WriteNode("End");
                         break;
-                   
                 }
             }
             WriteNode("End");
@@ -231,7 +227,6 @@ namespace WindomSVXedTool
             {
                 switch (node.Name)
                 {
-                   
                     case "SizeRatio":
                         WriteNode(node.Name);
                         bw.Write(Single.Parse(node.Attributes["Value"].Value));
@@ -255,7 +250,7 @@ namespace WindomSVXedTool
                         WriteText(node.Attributes["Text"].Value);
                         foreach (XmlNode data in node.ChildNodes)
                         {
-                            switch(data.Name)
+                            switch (data.Name)
                             {
                                 case "BoneIdx":
                                     WriteNode(data.Name);
@@ -382,24 +377,22 @@ namespace WindomSVXedTool
                                     bw.Write(Single.Parse(data.Attributes["x"].Value));
                                     bw.Write(Single.Parse(data.Attributes["y"].Value));
                                     bw.Write(Single.Parse(data.Attributes["z"].Value));
-
                                     break;
                             }
-                            
+
                         }
                         WriteNode(writeEnd);
                         break;
-                    
                 }
-             }
+            }
             WriteNode("EndPhysics");
         }
 
         void WriteMatrix(string pText)
         {
             string[] values = pText.Split(" ".ToCharArray());
-            for (int i = 0; i < 16 ; i++)
-                bw.Write(Single.Parse(values[i]));      
+            for (int i = 0; i < 16; i++)
+                bw.Write(Single.Parse(values[i]));
         }
 
         void WriteText(string pText)
