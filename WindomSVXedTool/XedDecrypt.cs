@@ -12,7 +12,7 @@ namespace WindomSVXedTool
     class XedDecrypt
     {
         XmlWriter xw;
-        XmlWriterSettings xws = new XmlWriterSettings();
+        XmlWriterSettings xws = new XmlWriterSettings() { Indent = true };
         BinaryReader br;
         List<string> filelist;
         string xText = "";
