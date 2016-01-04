@@ -16,3 +16,4 @@ C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\Windom-SV-xed-Tool\Wind
 C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\Windom-SV-xed-Tool\WindomSVXedTool\obj\Release\WindomSVXedTool.csproj.GenerateResource.Cache
 C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\Windom-SV-xed-Tool\WindomSVXedTool\bin\Release\System.Net.Http.dll
 C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\Windom-SV-xed-Tool\WindomSVXedTool\bin\Release\System.Net.Http.xml
+C:\Users\gaming-pc\Documents\Visual Studio 2015\Projects\Windom-SV-xed-Tool\WindomSVXedTool\obj\Release\WindomSVXedTool.csprojResolveAssemblyReference.cache

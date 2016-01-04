@@ -438,10 +438,10 @@ namespace WindomSVXedTool
         void WriteXof()
         {
             int binarylength = br.ReadInt32();
-            using (var stream = File.Create(Path.Combine(Folder, "MeshData.xof")))
+            using (var stream = File.Create(Path.Combine(Folder, "MeshData.x")))
             using (BinaryWriter bw = new BinaryWriter(stream))
                 bw.Write(br.ReadBytes(binarylength));
-            filelist.Add("MeshData.xof");
+            filelist.Add("MeshData.x");
         }
 
         void BoneProperty(string ptext)
