@@ -53,6 +53,7 @@
             this.txtFile.Name = "txtFile";
             this.txtFile.Size = new System.Drawing.Size(184, 20);
             this.txtFile.TabIndex = 2;
+            this.txtFile.TextChanged += new System.EventHandler(this.txtFile_TextChanged);
             // 
             // button3
             // 
@@ -95,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 200);
+            this.ClientSize = new System.Drawing.Size(303, 198);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
@@ -104,6 +105,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Windom SV Xed Tool";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

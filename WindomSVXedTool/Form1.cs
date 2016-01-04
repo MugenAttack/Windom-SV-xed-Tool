@@ -42,11 +42,13 @@ namespace WindomSVXedTool
                 {
                     case ".xed":
                         XedDecrypt xd = new XedDecrypt();
-                        xd.Decrypt(txtFile.Text,txtName.Text); 
+                        xd.Decrypt(txtFile.Text,txtName.Text);
+                        MessageBox.Show("Unpacking is Done");
                         break;
                     case ".txt":
                         XedEncrypt xe = new XedEncrypt();
                         xe.Encrypt(txtFile.Text, f.DirectoryName,txtName.Text);
+                        MessageBox.Show("Packing is Done");
                         break;
                     default:
                         MessageBox.Show("Error: Invalid File Type");
@@ -72,6 +74,29 @@ namespace WindomSVXedTool
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFile_TextChanged(object sender, EventArgs e)
+        {
+            FileInfo f = new FileInfo(txtFile.Text);
+
+            switch (f.Extension)
+            {
+                case ".xed":
+                    button1.Text = "Unpack";
+                    break;
+                case ".txt":
+                    button1.Text = "Pack";
+                    break;
+                default:
+                    button1.Text = "Invalid File Type";
+                    break;
+            }
         }
     }
 }
